@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Reading Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <h1 class="text-2xl font-bold mb-4">Book Reading Tracker</h1>
+
+  <!-- Formulaire d'ajout de livre -->
+  <form id="book-form" class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-6 rounded-lg shadow mb-6">
+    
+    <div>
+      <label class="block text-sm font-medium">Titre</label>
+      <input name="title" required class="w-full border rounded p-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium">Auteur</label>
+      <input name="author" required class="w-full border rounded p-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium">Nombre de pages</label>
+      <input name="numberOfPages" type="number" min="1" required class="w-full border rounded p-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium">Statut</label>
+      <select name="status" required class="w-full border rounded p-2">
+        <option>Read</option>
+        <option>Re-read</option>
+        <option>DNF</option>
+        <option>Currently reading</option>
+        <option>Returned Unread</option>
+        <option>Want to read</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium">Prix</label>
+      <input name="price" type="number" step="0.01" class="w-full border rounded p-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium">Pages lues</label>
+      <input name="pagesRead" type="number" min="0" value="0" class="w-full border rounded p-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium">Format</label>
+      <select name="format" required class="w-full border rounded p-2">
+        <option>Print</option>
+        <option>PDF</option>
+        <option>Ebook</option>
+        <option>AudioBook</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium">Suggéré par</label>
+      <input name="suggestedBy" class="w-full border rounded p-2" />
+    </div>
+
+    <div class="md:col-span-2 flex justify-end gap-2">
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Ajouter</button>
+      <button id="clear" type="button" class="bg-gray-200 px-4 py-2 rounded">Effacer</button>
+    </div>
+
+  </form>
+
+  <!-- Statistiques globales -->
+  <div id="stats" class="bg-white p-4 rounded-lg shadow mb-6">
+    <div class="flex justify-between">
+      <div>Total livres: <span id="total-books">0</span></div>
+      <div>Livres finis: <span id="finished-books">0</span></div>
+      <div>Total pages: <span id="total-pages">0</span></div>
+    </div>
+  </div>
+
+  <!-- Liste des livres -->
+  <div id="books-list" class="space-y-4"></div>
+
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
+
