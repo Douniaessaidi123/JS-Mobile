@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .bg-white.p-8.rounded.shadow-md.w-96
+    h2.text-2xl.mb-4.text-center Connexion
+    form(action="/login" method="POST")
+      input(type="email" name="email" placeholder="Email" class="w-full border p-2 rounded mb-3")
+      input(type="password" name="password" placeholder="Mot de passe" class="w-full border p-2 rounded mb-3")
+      button(type="submit" class="bg-green-500 text-white w-full py-2 rounded") Se connecter
+    a.text-blue-500(href="/register") Pas encore de compte ? S'inscrire

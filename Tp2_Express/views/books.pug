@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .bg-white.p-8.rounded.shadow-md.w-3/4
+    h2.text-2xl.mb-4.text-center Liste des livres
+    ul
+      each book in books
+        li.mb-2 #{book.title} - #{book.author}
+    a.text-red-500(href="/logout") Déconnexion
